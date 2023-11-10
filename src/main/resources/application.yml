@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+  # dataSource
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yourhost:3306/labweb_test?
+      useUnicode=true&
+      characterEncoding=utf-8&
+      useSSL=true&
+      serverTimezone=Asia/Shanghai
+    # serverTimezone=UTC
+    # 此处因为插入数据库的时间有差异，所以强制了时区，暂时如此处理
+    username: username
+    password: password
+  # jpa
+  jpa:
+    # 视图渲染时继续访问数据库(默认为true)，会有性能提示警告，但如果关闭，需注意懒加载问题，注意添加@Transitional
+    open-in-view: false
+    hibernate.ddl-auto: create
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true

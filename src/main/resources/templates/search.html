@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<h1 th:text="${title}">Title</h1>
+<h2 th:text="${name}">Hello Thymeleaf</h2>
+
+<div id="header">
+    <h1>Protein Search</h1>
+</div>
+<div id="search-box">
+    <form th:action="@{/search}" method="get">
+        <input type="text" name="q" th:value="${query}" placeholder="Search Protein Info">
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<div id="search-results">
+    <!-- Display search results here -->
+    <h2>搜索结果：</h2>
+    <ul th:if="${results != null}">
+        <li th:each="result : ${results}" th:text="${result}"></li>
+    </ul>
+</div>
+
+<!--<div id="search-results">-->
+<!--    &lt;!&ndash; Display search results here &ndash;&gt;-->
+<!--    <p th:if="${results}">Search results for: <span th:text="${query}"></span></p>-->
+<!--    <ul th:if="${results}">-->
+<!--        <li th:each="result : ${results}">-->
+<!--            <a th:href="${result.url}" th:text="${result.title}"></a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    <p th:if="${not results}">No results found for: <span th:text="${query}"></span></p>-->
+<!--</div>-->
+
+
+<p>Click <a th:href="@{/index}">here</a> to return index page.</p>
+</body>
+</html>
