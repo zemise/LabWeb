@@ -1,0 +1,9 @@
+.centered-text {
+    text-align: center;
+}
+
+.centered-image {
+
+    display: flex;
+    justify-content: center;
+}

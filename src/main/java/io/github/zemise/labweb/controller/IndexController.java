@@ -27,6 +27,7 @@ public class IndexController {
         model.addAttribute("title", "首页");
         model.addAttribute("name", "Hello Thymeleaf from controller");
 
+        log.debug("show index page");
         return "index";
     }
 

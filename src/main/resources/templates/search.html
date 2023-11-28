@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}">Title</title>
+    <!-- 引入CSS文件    -->
+    <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
-<body>
+<body >
 <h1 th:text="${title}">Title</h1>
 <h2 th:text="${name}">Hello Thymeleaf</h2>
 
+
 <div id="header">
-    <h1>Protein Search</h1>
+    <div class="centered-text">
+        <h1> Protein Search</h1>
+    </div>
+
+    <div class="centered-image">
+        <img  th:src="@{/logo/logo_google.png}" alt="Centered Image">
+    </div>
+
 </div>
 <div id="search-box">
     <form th:action="@{/search}" method="get">
@@ -26,16 +36,6 @@
     </ul>
 </div>
 
-<!--<div id="search-results">-->
-<!--    &lt;!&ndash; Display search results here &ndash;&gt;-->
-<!--    <p th:if="${results}">Search results for: <span th:text="${query}"></span></p>-->
-<!--    <ul th:if="${results}">-->
-<!--        <li th:each="result : ${results}">-->
-<!--            <a th:href="${result.url}" th:text="${result.title}"></a>-->
-<!--        </li>-->
-<!--    </ul>-->
-<!--    <p th:if="${not results}">No results found for: <span th:text="${query}"></span></p>-->
-<!--</div>-->
 
 
 <p>Click <a th:href="@{/index}">here</a> to return index page.</p>
