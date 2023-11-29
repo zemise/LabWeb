@@ -7,7 +7,7 @@ spring:
   # dataSource
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://cellcraft.store:3306/labweb_test?
+    url: jdbc:mysql://mysql.cellcraft.top/labweb_test?
       useUnicode=true&
       characterEncoding=utf-8&
       useSSL=true&
@@ -28,3 +28,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
 
+logging:
+  level:
+    root: info
+    io.github.zemise.labweb: debug

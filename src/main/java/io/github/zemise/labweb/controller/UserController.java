@@ -1,16 +1,18 @@
 package io.github.zemise.labweb.controller;
 
+import io.github.zemise.labweb.entity.User;
 import io.github.zemise.labweb.utils.VerifyCodeUtils;
+import io.github.zemise.labweb.service.UserService;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 /**
  * <p>
@@ -23,7 +25,44 @@ import java.util.Date;
  */
 @Controller
 @RequestMapping("user")
+@Slf4j
 public class UserController {
+    private final UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    /**
+     * 用户注册
+     *
+     * @return
+     */
+    // 注意表单中的input的name属性名和变量名一致，才能自动赋值，比如这里的验证码的code
+    @RequestMapping("register")
+    public String register(User user, String code, HttpSession session) {
+        log.debug("用户名:{},真实姓名:{},密码：{}, 性别：{}", user.getUsername(), user.getRealName(),
+                user.getPassword(), user.getGender());
+        log.debug("用户输入的验证码：{}", code);
+
+        try {
+            // 判断用户输入的验证码和session中的验证码是否一致
+            String sessionCode = session.getAttribute("code").toString();
+            if (!sessionCode.equalsIgnoreCase(code)) {
+                throw new RuntimeException("验证码输入错误");
+            }
+            // 1. 完成用户注册
+            userService.register(user);
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            // 注册失败，回到注册
+            return "redirect:/register";
+        }
+        // 注册陈工，跳转到登录
+        return "redirect:/login";
+    }
+
     /**
      * 生成验证码
      */
