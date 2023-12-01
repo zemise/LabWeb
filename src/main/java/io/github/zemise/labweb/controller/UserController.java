@@ -35,6 +35,29 @@ public class UserController {
     }
 
     /**
+     * 用户登录
+     *
+     * @return
+     */
+    @RequestMapping("login")
+    public String login(String username, String password, HttpSession session) {
+        log.debug("本次登录的用户名：{}", username);
+        log.debug("本次登录的密码：{}", password);
+        try {
+            // 1. 调用业务层进行登录
+            User user = userService.login(username, password);
+            // 2.保存用户信息
+            session.setAttribute("user", user);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "redirect:/login"; // 登录失败，回到登录页面
+        }
+
+
+        return "redirect:/employee/lists"; // 登录成功之后，跳转到查询所有员工信息控制器路径
+    }
+
+    /**
      * 用户注册
      *
      * @return
@@ -54,7 +77,7 @@ public class UserController {
             }
             // 1. 完成用户注册
             userService.register(user);
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             e.printStackTrace();
             // 注册失败，回到注册
             return "redirect:/register";
