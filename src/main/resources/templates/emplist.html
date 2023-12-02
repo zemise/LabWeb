@@ -52,41 +52,21 @@
                         操作
                     </td>
                 </tr>
-                <tr class="row1">
+                <tr th:each="employee, state:${employeeList} " th:class="${state.odd ? 'row1' : 'row2'}">
                     <td>
-                        1
+                        <span th:text="${employee.id}"></span>
                     </td>
                     <td>
-                        zhangshan
-                    </td>
-                    <td>
-                        <img src="./img/nane.gif" width="60">
-                    </td>
-                    <td>
-                        20000
-                    </td>
-                    <td>
-                        2012/12/12
-                    </td>
-                    <td>
-                        <a href="emplist.html">删除</a>&nbsp;<a href="updateEmp.html">更新</a>
-                    </td>
-                </tr>
-                <tr class="row2">
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        lishi
+                        <span th:text="${employee.name}"></span>
                     </td>
                     <td>
                         <img src="./img/nane.gif" width="60">
                     </td>
                     <td>
-                        20000
+                        <span th:text="${employee.salary}"></span>
                     </td>
                     <td>
-                        2012/12/12
+                        <span th:text="${#dates.format(employee.birthday, 'yyyy-mm-dd')}"></span>
                     </td>
                     <td>
                         <a href="emplist.html">删除</a>&nbsp;<a href="updateEmp.html">更新</a>
