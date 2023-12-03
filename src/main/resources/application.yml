@@ -1,6 +1,16 @@
 spring:
   profiles:
     active: dev
+
+  web:
+    resources:
+      static-locations: classpath:/static/, file:${photo.file.dir} # 暴露哪些资源可以通过项目名访问
+
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 100MB
+
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -30,7 +40,13 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
 
+# 日志配置
 logging:
   level:
     root: info
     io.github.zemise.labweb: debug
+
+# 指定文件上传位置
+photo:
+  file:
+    dir: "/Volumes/MySSD/001_AllCode/Java/SpringBoot/LabWeb/photos"

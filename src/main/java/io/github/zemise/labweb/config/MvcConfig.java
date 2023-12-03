@@ -21,5 +21,6 @@ public class MvcConfig implements WebMvcConfigurer {
         // viewController 请求的路径； viewName 跳转的视图
         registry.addViewController("login").setViewName("login");
         registry.addViewController("register").setViewName("regist");
+        registry.addViewController("addEmp").setViewName("addEmp");
     }
 }

@@ -35,6 +35,16 @@ public class UserController {
     }
 
     /**
+     * 安全退出
+     * @return
+     */
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        session.invalidate(); // session失效
+        return "redirect:/login"; // 跳转到登录页面
+    }
+
+    /**
      * 用户登录
      *
      * @return
