@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LabWeb 中心实验室库存</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+
+<body>
+<div id="default-editor-page__placeholder" class="panel">
+    <link rel="stylesheet"
+          href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css"/>
+    <link rel="stylesheet"
+          href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css"/>
+    <section class="wrapper bg-gradient-primary">
+        <div class="container py-18 pt-md-18 pb-md-18">
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/bootstrap/css/bootstrap.min.css"/>
+            <header data-block-type="headers" data-id="1">
+                <div class="container">
+                </div>
+            </header>
+            <nav class="navbar navbar-expand-lg">
+                <a href="https://htmlpage.cn" class="navbar-brand"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarNav5" aria-controls="navbarNav5"
+                        aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div id="navbarNav5" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a th:href="@{/}" class="nav-link">首页 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.cellcraft.top" class="nav-link">抗体</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.cellcraft.top" class="nav-link">引物</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.cellcraft.top" class="nav-link">试剂</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav justify-content-end ml-auto">
+                        <li class="nav-item">
+                            <a href="https://www.cellcraft.top" class="nav-link">文档</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.cellcraft.top" class="nav-link">反馈</a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{login}" class="nav-link">登录</a>
+                        </li>
+                    </ul>
+                    <a th:href="@{register}" class="btn ml-md-3">注册</a>
+                </div>
+            </nav>
+            <div class="row text-center">
+                <div id="isfg6" class="c2225">中心实验室
+                </div>
+                <div class="col-lg-9 col-xxl-7 mx-auto">
+                    <h2 class="display-1 mb-4">LabWeb
+                    </h2>
+                    <div id="iw8dl" class="c6392">库存试剂，轻松找到
+                    </div>
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+            <div class="d-flex justify-content-center">
+                <span></span>
+                <span></span>
+            </div>
+            <!-- /div -->
+            <div>
+                <form  th:action="@{/search}" method="get">
+                    <input id="iaeyh" type="text" class="c5468" name="q" th:value="${query}" placeholder="🔍按关键字搜索"/>
+                </form>
+            </div>
+
+            <div class="row mt-12">
+                <div class="col-lg-8 mx-auto">
+                    <figure>
+                        <img th:src="@{/img/i12.png}" alt="" class="img-fluid"/>
+                    </figure>
+                </div>
+                <!-- /column -->
+            </div>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css"/>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css"/>
+            <section class="wrapper bg-light wrapper-border">
+                <!-- /.container -->
+            </section>
+            <!-- /section -->
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/plugins.js"></script>
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/theme.js"></script>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css"/>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css"/>
+            <section class="wrapper">
+                <div class="container py-14 py-md-16">
+                    <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+                        <div class="col-md-8 col-lg-6 col-xl-5 order-lg-2 position-relative">
+                            <div data-rellax-speed="1" id="ixs08"
+                                 class="shape bg-soft-primary rounded-circle rellax w-20 h-20 c7815">
+                            </div>
+                            <figure class="rounded">
+                                <img th:src="@{/img/about7.jpg}" alt=""/>
+                            </figure>
+                        </div>
+                        <!--/column -->
+                        <div class="col-lg-6">
+                            <h2 class="mb-3">关于抗体
+                            </h2>
+                            <p class="lead fs-lg">专业易用的众多抗体搜索工具
+                            </p>
+                            <p class="mb-6">实验室包含各个公司的多种抗体，职工与学生共享使用。无需再到处问人，支持可视化详细搜索，摆脱繁琐的翻冰箱。高效页面搜索，在线库存搜索神器
+                                ！
+                            </p>
+                            <div class="row gx-xl-10 gy-6">
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-row">
+                                        <div>
+                                            <img th:src="@{/img/target.svg}" alt="" class="icon-svg icon-svg-sm me-4"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-1">产品目标
+                                            </h4>
+                                            <p class="mb-0">简洁、高效、专业的库存抗体搜索，助力高效科研
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/column -->
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-row">
+                                        <div>
+                                            <img th:src="@{/img/award-2.svg}" alt="" class="icon-svg icon-svg-sm me-4"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-1">产品价值
+                                            </h4>
+                                            <p class="mb-0">各平台网页搜索，化繁为简，支持响应式
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-center">
+                                    <a href="https://www.cellcraft.top">了解更多 &gt;</a>
+                                </p>
+                                <!--/column -->
+                            </div>
+                            <!--/.row -->
+                        </div>
+                        <!--/column -->
+                    </div>
+                    <!--/.row -->
+                </div>
+                <!-- /.container -->
+            </section>
+            <!-- /section -->
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/plugins.js"></script>
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/theme.js"></script>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/plugins.css"/>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/css/style.css"/>
+            <section class="wrapper">
+                <div class="container py-14 py-md-16">
+                    <link rel="stylesheet"
+                          href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/bootstrap/css/bootstrap.min.css"/>
+                    <section data-block-type="contents" data-id="3" draggable="true" class="fdb-block">
+                        <div id="ijiebl" class="col-fill-left c9602">
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-5 text-center">
+                                    <h1>关于引物
+                                    </h1>
+                                    <p class="text-h3">
+                                        实验室包含各个公司的多种引物，职工与学生共享使用。无需再到处问人，支持可视化详细搜索，摆脱繁琐的翻冰箱。高效页面搜索，在线库存搜索神器
+                                        ！
+                                    </p>
+                                    <p class="mt-4">
+                                        <a href="https://www.cellcraft.top">了解更多 &gt;</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--/.row -->
+                </div>
+                <!-- /.container -->
+            </section>
+            <!-- /section -->
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/plugins.js"></script>
+            <script src="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/vip-tpl/assets/js/theme.js"></script>
+            <link rel="stylesheet"
+                  href="https://template-1253409072.cos.ap-guangzhou.myqcloud.com/bootstrap/css/bootstrap.min.css"/>
+            <section data-block-type="contents" data-id="4" draggable="true" class="fdb-block pt-0 pb-0">
+                <div id="i2jrdy" class="col-fill-right c9862">
+                </div>
+                <div class="container pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-12 col-md-5 text-center">
+                            <h1>关于试剂
+                            </h1>
+                            <p class="text-h3">实验室包含各个公司的多种试剂，职工与学生共享使用。无需再到处问人，支持可视化详细搜索，摆脱繁琐的翻冰箱。高效页面搜索，在线库存搜索神器
+                                ！
+                            </p>
+                            <p class="mt-4">
+                                <a href="https://www.cellcraft.top">了解更多 &gt;</a>
+                            </p>
+                            <p>Follow us on
+                            </p>
+                            <p class="media-icons">
+                                <a href="https://www.htmlpage.cn"><i aria-hidden="true" class="fa fa-twitter">
+                                </i></a>
+                                <a href="https://www.htmlpage.cn"><i aria-hidden="true" class="fa fa-facebook">
+                                </i></a>
+                                <a href="https://www.htmlpage.cn"><i aria-hidden="true" class="fa fa-instagram">
+                                </i></a>
+                                <a href="https://www.htmlpage.cn"><i aria-hidden="true" class="fa fa-pinterest">
+                                </i></a>
+                                <a href="https://www.htmlpage.cn"><i aria-hidden="true" class="fa fa-google">
+                                </i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <section class="wrapper bg-gradient-primary">
+        <div class="container pt-18 pb-8">
+            <div class="row text-center">
+                <div class="col-lg-9 col-xxl-7 mx-auto">
+                    <h2 class="display-1 mb-4">扫描二维码加入交流群
+                    </h2>
+                    <p class="lead fs-24 lh-sm px-md-5 px-xl-15 px-xxl-10 mb-7">使用过程中遇到问题，可以在群里求助
+                    </p>
+                </div>
+                <!-- /column -->
+            </div>
+        </div>
+    </section>
+    <div class="wechat-group pb-12">
+        <img th:src="@{/img/wechat-group-1.JPG}"/>
+    </div>
+    <div class="description">© 2024 Zemise. 版权所有
+    </div>
+</div>
+</body>
+</html>

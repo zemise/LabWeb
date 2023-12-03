@@ -7,10 +7,9 @@
     <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body >
+
 <h1 th:text="${title}">Title</h1>
 <h2 th:text="${name}">Hello Thymeleaf</h2>
-
-
 <div id="header">
     <div class="centered-text">
         <h1> Protein Search</h1>
@@ -35,9 +34,5 @@
         <li th:each="result : ${results}" th:text="${result}"></li>
     </ul>
 </div>
-
-
-
-<p>Click <a th:href="@{/index}">here</a> to return index page.</p>
 </body>
 </html>

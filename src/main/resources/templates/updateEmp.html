@@ -13,7 +13,7 @@
         <div id="header">
             <div id="rightheader">
                 <p>
-                    2009/11/20
+                    <span th:text="${#dates.format(#dates.createNow(), 'yyyy/MM/dd')}"></span>
                     <br/>
                 </p>
             </div>
